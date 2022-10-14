@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crear Inventario</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/babdd0dc30.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/css/ab.css">
+<link rel="stylesheet" type="text/css" href="/css/estiloPerfilV.css">
+<link rel="stylesheet" type="text/css" href="/css/estilofooter.css">
+<link rel="stylesheet" type="text/css" href="/css/estiloinventario.css">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/ModuloInv.js"></script>
+
+
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row justify-content-center align-content-center">
+
+			<div class="col-7 barra1"
+				style="background-image: linear-gradient(to left, #ffffff 0%, #00c9ff 100%);">
+			</div>
+
+			<div class="col-5 barra1"
+				style="background-image: linear-gradient(to right, #ffffff 0%, #00c9ff 100%);">
+				<div class="dropdown">
+					<a class="btn  dropdown-toggle boton text-light" type="button"
+						id="dropdownMenuButton1" data-bs-toggle="dropdown"
+						aria-expanded="false"> <i class="fas fa-user-circle user"></i>
+						Deyvid Gamboa Romero
+					</a>
+					<ul class="dropdown-menu boton"
+						aria-labelledby="dropdownMenuButton1">
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/Solware2/home/index">Cerrar
+							sesión</a>
+				</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="barra-lateral col-12 col-sm-auto">
+
+				<nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+					<img id="logo" th:src="@{/img/LOGO SOL WARE .PNG}" width="140px">
+					<a class="option" th:href="@{/Solware2/home/Admin}"><i
+						class="fas fa-home" title="Inicio"></i><span>Inicio</span></a>
+					<div class="dropdown">
+						<a class=" dropdown-toggle " type="button"
+							data-bs-toggle="dropdown" aria-expanded="false"> usuarios </a>
+						<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+							<a class="dropdown-item"
+								th:href="@{/Solware2/home/ConsultarUs/nuevo}">Registrar
+								usuarios</a>
+							<a class="dropdown-item" th:href="@{/Solware2/home/ConsultarUs}">Consutar
+								usuarios</a>
+
+						</ul>
+					</div>
+
+
+					<div class="dropdown">
+						<a class=" dropdown-toggle " type="button"
+							data-bs-toggle="dropdown" aria-expanded="false"> Inventarios
+						</a>
+						<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+							<li><a class="dropdown-item"
+								th:href="@{/Solware2/home/ModuloInventario}">CREAR</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/Solware2/home/Consultar}">CONSULTAR</a></li>
+
+						</ul>
+						<div class="dropdown">
+							<a class=" dropdown-toggle " type="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> Proveedor </a>
+							<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+								<a class="dropdown-item"
+									th:href="@{/Solware2/home/ProveedoresA}">C_Proveedores</a>
+								<a class="dropdown-item"
+									th:href="@{/Solware2/home/C_ProveedoresA}">Consultar</a>
+
+							</ul>
+						</div>
+						<div class="dropdown">
+							<a class=" dropdown-toggle " type="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> Productos </a>
+							<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+								<a class="dropdown-item" th:href="@{/Solware2/home/ProductosA}">C_Productos</a>
+								<a class="dropdown-item"
+									th:href="@{/Solware2/home/C_ProductosA}">Consultar</a>
+
+							</ul>
+						</div>
+						<div class="dropdown">
+							<a class=" dropdown-toggle " type="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> Cliente </a>
+							<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+								<a class="dropdown-item" th:href="@{/Solware2/home/ClientesA}">C_Cliente</a>
+								<a class="dropdown-item" th:href="@{/Solware2/home/C_ClienteA}">Consultar</a>
+
+							</ul>
+						</div>
+						<div class="dropdown">
+							<a class=" dropdown-toggle " type="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> pedido </a>
+							<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+								<a class="dropdown-item" th:href="@{/Solware2/home/PedidosA}">C_Pedido</a>
+								<a class="dropdown-item" th:href="@{/Solware2/home/C_PedidosA}">Consultar</a>
+
+							</ul>
+						</div>
+
+						<div class="dropdown">
+							<a class=" dropdown-toggle " type="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> Ventas </a>
+							<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+								<a class="dropdown-item" th:href="@{/Solware2/home/ventasAdmin}">CREAR</a>
+								<a class="dropdown-item"
+									th:href="@{/Solware2/home/ConsultarAdmin}">CONSULTAR</a>
+
+							</ul>
+							<div class="dropdown">
+								<a class=" dropdown-toggle " type="button"
+									data-bs-toggle="dropdown" aria-expanded="false"> Producion
+								</a>
+								<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+									<a class="dropdown-item"
+										th:href="@{/Solware2/home/ProducionAdmin}">CREAR</a>
+									<a class="dropdown-item"
+										th:href="@{/Solware2/home/ConsultarPAdmin}">CONSULTAR</a>
+								</ul>
+								<div class="dropdown">
+									<a class=" dropdown-toggle " type="button"
+										data-bs-toggle="dropdown" aria-expanded="false"> Reportes
+									</a>
+									<ul class="dropdown-menu "
+										aria-labelledby="dropdownMenuButton1">
+										<a class="option" th:href="@{/Solware2/home/ReportesVA}"><span>ReportesV</span></a>
+										<a class="dropdown-item"
+											th:href="@{/Solware2/home/ReportesIn}">ReportesIn</a>
+										<a class="dropdown-item"
+											th:href="@{/Solware2/home/ReportesPro}">ReportesPro</a>
+									</ul>
+				</nav>
+			</div>
+			<main class="main col">
+				<div
+					class="row justify-content-center align-content-center text-center">
+					<div class="columna col-lg-12">
+
+						<div class="col-mx-12 medio" style="margin: auto;">
+							<div class="col-md-12">
+								<h1>INVENTARIO</h1>
+							</div>
+							<form th:action="@{/Solware2/home/Consultar}" th:object="${Inventario}"
+								method="POST">
+
+								<link rel="stylesheet" href="/css/estiloPerfilV.css">
+
+								<section class="form-register">
+									<div class="col-12">
+										<h5>Fecha de creación</h5>
+										<ul class="nav flex-column" style="">
+											<div class="input-group mb-3">
+												<span class="input-group-text" id="addon-wrapping"
+													style="margin-left: 93px;"><i
+													class="bi bi-calendar4-range"></i></span> 
+													<input id="fecha"
+													type="date" class="form-control"
+													aria-describedby="basic-addon1"
+													style="border-right-width: 0px; margin-right: 75px;" th:field="*{Fecha}">
+											</div>
+										</ul>
+									</div>
+
+									<div class="col-12 "
+										style="padding-right: 50px; padding-left: 0px;">
+										<label for="INSUMO"
+											style="margin-right: 10px; margin-left: 72px;">ID
+											Insumo</label> <input id="IdInsumo" type="text" th:field="*{Insumo}">
+										<button type="button" class="btn btn" data-toggle="modal"
+											data-target="#myModal" >
+											<i class="fa-solid fa-plus"></i>
+										</button>
+										<!-- The Modal -->
+										<div class="modal" id="myModal">
+											<div class="modal-dialog">
+												<div class="modal-content">
+
+													<!-- Modal Header -->
+													<div class="modal-header">
+														<h4 style="text-align: center;">ID INSUMO</h4>
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+													</div>
+
+													<!-- Modal body -->
+													<div class="modal-body"
+														style="right: 29px; margin-right: 150px; left: auto;">
+														<table class="tableizer-table">
+															<thead>
+																<tr class="tableizer-firstrow">
+																	<th>Insumos</th>
+																	<th>&nbsp;</th>
+																	<th>&nbsp;</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>ID_Insumo</td>
+																	<td>Nombre_Material</td>
+																	<td>Estado</td>
+																</tr>
+																<tr>
+																	<td>2424</td>
+																	<td>Colbon</td>
+																	<td>3</td>
+																</tr>
+																<tr>
+																	<td>213</td>
+																	<td>Cinta</td>
+																	<td>3</td>
+																</tr>
+																<tr>
+																	<td>564</td>
+																	<td>Cauchos</td>
+																	<td>3</td>
+																</tr>
+																<tr>
+																	<td>1541</td>
+																	<td>Cordon</td>
+																	<td>4</td>
+																</tr>
+																<tr>
+																	<td>251</td>
+																	<td>Nailon</td>
+																	<td>5</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
+													<!-- Modal footer -->
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger"
+															data-dismiss="modal">Cerrar</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<button type="button" class="btn btn" data-toggle="modal"
+											data-target="#myModal2">Crear</button>
+										<!-- The Modal -->
+										<div class="modal" id="myModal2">
+											<div class="modal-dialog">
+												<div class="modal-content">
+
+													<!-- Modal Header -->
+													<div class="modal-header">
+														<h4 style="text-align: center;">Crear Insumo</h4>
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+													</div>
+
+													<!-- Modal body -->
+													<div class="modal-body">
+
+
+
+													<!-- Modal footer -->
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger"
+															data-dismiss="modal">Cerrar</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 "
+										style="padding-right: 50px; padding-left: 0px;">
+										<label for="MOVIMIENTO">Movimiento</label> <input
+											id="Movimiento" type="text" th:field="*{Movimiento}">
+
+										<button type="button" class="btn btn" data-toggle="modal"
+											data-target="#myModa2">
+											<i class="fa-solid fa-plus"></i>
+										</button>
+										<!-- The Modal -->
+										<div class="modal" id="myModa2">
+											<div class="modal-dialog">
+												<div class="modal-content">
+
+													<!-- Modal Header -->
+													<div class="modal-header">
+														<h4 style="text-align: center;">MOVIMIENTO</h4>
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+													</div>
+
+													<!-- Modal body -->
+													<div class="modal-body"
+														style="right: 29px; margin-right: 150px; left: auto;">
+														<table class="tableizer-table">
+															<thead>
+																<tr class="tableizer-firstrow">
+																	<th>Movimiento</th>
+																	<th>&nbsp;</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>ID_Movimiento</td>
+																	<td>Nombre</td>
+																</tr>
+																<tr>
+																	<td>1</td>
+																	<td>Entrada</td>
+																</tr>
+																<tr>
+																	<td>2</td>
+																	<td>Salida</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
+													<!-- Modal footer -->
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger"
+															data-dismiss="modal">Cerrar</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 "
+										style="padding-right: 88px; padding-left: 0px;">
+										<label for="categoria">Entrada</label> <input id="Descripcion"
+											type="text"th:field="*{Entrada}">
+									</div>
+
+									<div class="col-12 "
+										style="padding-right: 88px; padding-left: 0px;">
+										<label for="categoria">Salida</label> <input id="Descripcion"
+											type="text" th:field="*{Salida}">
+									</div>
+
+									<div class="col-12 "
+										style="padding-right: 88px; padding-left: 0px;">
+										<label for="categoria">Disponible</label> <input
+											id="Descripcion" type="text" th:field="*{Disponible}">
+									</div>
+
+									<div class="col-12 ">
+										<br> <input type="submit" class="btn btn-info"
+											id="submit" onclick="validacion()" value="Enviar"> <input
+											type="reset" name="reset" class="btn btn-info"
+											value="Restablecer">
+
+									</div>
+									<div class="container"></div>
+
+
+								</section>
+
+							</form>
+
+						</div>
+					</div>
+
+				</div>
+		</div>
+
+	</div>
+
+	</main>
+	</div>
+	</div>
+	<footer class="pie-pagina">
+		<div class="grupo-1">
+			<div class="box">
+				<figure>
+					<a href="#"> <img src="/img/LOGO_SOL_Y_ASOCIADOS.png"
+						alt="Logo">
+					</a>
+				</figure>
+			</div>
+			<div class="box">
+				<h2>SOBRE NOSOTROS</h2>
+				<p>Satélite administrativo de terminaciones gráficas</p>
+				<p>BOGOTA D.C KR 90-6D 4</p>
+				<p>3132877292</p>
+			</div>
+			<div class="box">
+				<h2>SIGUENOS</h2>
+				<div class="red-social">
+					<a href="#" class="fa fa-facebook"></a> <a href="#"
+						class="fa fa-instagram"></a> <a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-youtube"></a>
+				</div>
+			</div>
+		</div>
+		<div class="grupo-2">
+			<small>&copy; 2022 <b>Sol y Asociados</b> - Todos los
+				Derechos Reservados.
+			</small>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/646c794df3.js"></script>
+
+</body>
+</html>
+

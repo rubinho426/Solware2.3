@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous">
+<title>Editar Inventario</title>
+</head>
+<body>
+
+
+	<div class="container">
+		<div Class="row">
+			<h1>Editar</h1>
+		</div>
+	
+		<section class="form-register" style="margin: auto; margin-top: 20px;">
+		
+		                     
+		                    <form th:action="@{/Solware2/home/Consultar/{ID_Inventario}(ID_Inventario=${Inventario.ID_Inventario})} " th:object="${Inventario}" method="POST" >
+                            <input class="controls" type="text" name="Insumo" id="Insumo" th:field="*{Insumo}" >
+                            <input class="controls" type="text" name="Movimiento"  th:field="*{Movimiento}" id="Movimiento" >
+                            <input class="controls" type="text"name="Entrada"  th:field="*{Entrada}" id="Entrada" >
+                            <input class="controls" type="text"name="Salida"  th:field="*{Salida}" id="Salida" >
+                            <input class="controls" type="text"required id="Disponible"  th:field="*{Disponible}"  >
+							<input class="controls" type="text"required id="Fecha"  th:field="*{Fecha}">                            
+                            
+                            <input type="submit" class="btn btn-info"id="submit"
+                            value="Enviar">
+                            <input type="reset" name="reset"class="btn btn-info" 
+                            value="Restablecer"> 
+                            </form>
+		
+
+			      </section>
+
+	</div>
+</body>
+</html>
